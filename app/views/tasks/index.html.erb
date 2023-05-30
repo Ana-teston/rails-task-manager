@@ -6,9 +6,12 @@
       <li class="text-center">
         <label class="flex items-center">
           <input type="checkbox" class="mr-2" <%= 'checked' if task.completed %>>
-          <%= link_to task.title, task_path(task), class: "text-green-500" %>
+          <%= link_to task.title, task_path(task), class: "text-green-500 hover:underline"  %>
         </label>
       </li>
     <% end %>
   </ul>
+  <div class="p-6">
+    <%= link_to "+ Add a new task", new_task_path, class: "text-blue-500 hover:underline" %>
+  </div>
 </div>

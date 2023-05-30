@@ -1,0 +1,19 @@
+<div class="p-4 m-6">
+  <h1 class="text-lg font-semibold">Add a new task</h1>
+  <%= form_with(model: @task) do |form| %>
+    <%= form.label :title %><br/>
+    <%= form.text_field :title %><br/>
+
+    <%= form.label :details %><br/>
+    <%= form.text_field :details %><br/>
+
+      <p>
+        <%= form.check_box :completed, id: "task-checkbox-#{@task.id}" %>
+        <span class="text-black-400">This task is not completed yet</span>
+      </p>
+
+
+    <%= form.submit "Edit a task", class: "bg-blue-500 hover:bg-blue-600 text-white m-4 py-2 px-4 rounded-md" %>
+  <% end %>
+  <div class="m-4 p-6"><%= link_to "<- Back to tasks", tasks_path, class: "text-green-500 hover:underline"  %></div>
+</div>
